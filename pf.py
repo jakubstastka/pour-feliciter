@@ -4,7 +4,7 @@ import random
 
 def main():
     this_year = datetime.date.today().year
-    next_year = datetime.date.today().year + 1
+    next_year = this_year + 1
 
     if (
             datetime.date(year=this_year, month=12, day=1)
