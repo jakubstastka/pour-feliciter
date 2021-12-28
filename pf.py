@@ -2,9 +2,9 @@ import datetime
 import random
 
 
-def main():
+def wish_happy_new_year(wisher=None):
     this_year = datetime.date.today().year
-    next_year = datetime.date.today().year + 1
+    next_year = this_year + 1
 
     if (
             datetime.date(year=this_year, month=12, day=1)
@@ -16,15 +16,18 @@ def main():
             f"Happy New Year {next_year}!",
             f"Pour Felicitér {next_year}!",
             f"Best Wishes for {next_year}!",
-            f"gl hf in {next_year}!",
-            f"Happy another revolution around the sun designated as {next_year}!"
+            f"gl&hf in {next_year}!",
+            f"Happy another revolution around "
+            f"the sun designated as {next_year}!"
         ]
 
-        print(random.choice(messages))
+        suffix = f" From {wisher}" if wisher else ""
+
+        return random.choice(messages) + suffix
 
     else:
-        print("Too early for that, no?")
+        return "Too early for that, no?"
 
 
 if __name__ == '__main__':
-    main()
+    wish_happy_new_year("Jakub Stastka")
